@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children of Bodom - Official Tribute Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Общие Стилевые Настройки (Reset & Base) --- */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-dark: #121212;         /* Глубокий темный фон */
+            --color-medium: #1C1C1C;       /* Фон для блоков */
+            --color-light: #F0F0F0;        /* Основной светлый текст */
+            --color-accent: #E30B5C;       /* Яркий акцентный цвет (Пурпурный) */
+            --color-secondary: #00ADB5;    /* Дополнительный акцент (Бирюзовый) */
+            --font-main: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- 2. Навигационная Панель (Header) --- */
+
+        .header {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            margin-left: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--color-light);
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- 3. Геройский Блок (Hero Section) --- */
+
+        .hero {
+            /* Добавьте фоновое изображение здесь: background: url('ваше_изображение.jpg') center/cover no-repeat; */
+            background-color: #000000;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4); 
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-light);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-secondary);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-accent);
+            color: var(--color-dark);
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- 4. Контентные Секции и Заголовки --- */
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .history p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #C0C0C0;
+        }
+
+        .quote {
+            background-color: var(--color-medium);
+            border-left: 5px solid var(--color-secondary);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--color-light);
+        }
+
+        /* --- 5. Секция Участники (Members) --- */
+        
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .member-card {
+            background-color: var(--color-medium);
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Обрезает изображение по границам карточки */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: scale(1.03); /* Небольшое увеличение при наведении */
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 350px; /* Фиксированная высота для всех фото */
+            object-fit: cover; /* Изображение заполнит карточку без искажений */
+            filter: grayscale(80%); /* Немного приглушенный стиль */
+            transition: filter 0.5s ease;
+        }
+        
+        .member-card:hover .member-photo {
+            filter: grayscale(0%); /* Цветное при наведении */
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h4 {
+            color: var(--color-accent);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .member-info p {
+            color: #A0A0A0;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* --- Кнопка "Подробнее" на карточке --- */
+        .member-card .btn-small {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            background-color: var(--color-secondary);
+            color: var(--color-dark);
+        }
+
+        .member-card .btn-small:hover {
+            background-color: var(--color-accent);
+        }
+
+        /* --- 6. Дискография (Стили из прошлой версии) --- */
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .album-card {
+            background-color: var(--color-medium);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-top: 3px solid var(--color-accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(227, 11, 92, 0.2);
+        }
+
+        .album-card h4 {
+            color: var(--color-light);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .album-card p {
+            color: #A0A0A0;
+        }
+
+        .more-link {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* --- 7. Футер (Footer) --- */
+
+        .footer {
+            background-color: var(--color-medium);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(227, 11, 92, 0.3);
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #888888;
+        }
+
+        /* --- 8. Медиазапросы для мобильной версии (Удобный дизайн) --- */
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo { margin-bottom: 10px; }
+            .nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-link { margin: 5px 10px; }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .content-section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">COB Tribute</h1>
+            <nav class="nav">
+                <a href="#history" class="nav-link">История</a>
+                <a href="#members" class="nav-link">Участники</a>
+                <a href="#discography" class="nav-link">Дискография</a>
+                <a href="#media" class="nav-link">Медиа</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">CHILDREN OF BODOM</h2>
+            <p class="hero-subtitle">1993 – 2019 / In Memoriam</p>
+            <a href="#history" class="btn">Узнать Историю</a>
+        </div>
+    </section>
+
+    <section id="history" class="content-section history">
+        <div class="container">
+            <h3>История и Наследие</h3>
+            <p>Children of Bodom — культовая финская метал-группа, основанная в 1993 году в городе Эспоо. Изначально коллектив назывался Inearthed, но позже был переименован в честь трагических событий у озера Бодом — одного из самых известных нераскрытых дел в истории Финляндии. Основателями группы стали Алексей Лайхо (гитара, вокал) и Янне Вирман (клавишные). С самого начала Children of Bodom выделялись уникальным стилем: сочетание мелодичного дэт-метала, трэш-метала и неоклассических гитарных партий, вдохновлённых хэви-металом 80-х и классической музыкой. Это сделало их звучание узнаваемым по всему миру.</p>
+            <p>Первый студийный альбом «Something Wild» (1997) мгновенно привлёк внимание метал-сцены, а последующие релизы — «Hatebreeder» (1999), «Follow the Reaper» (2000) и «Hate Crew Deathroll» (2003) — закрепили за группой статус одной из главных представителей финского металла. Их песни сочетали агрессию, техничность и мелодичность, чего редко удавалось добиться другим коллективам.
+
+Children of Bodom завоевали признание не только в Европе, но и в США и Японии, регулярно выступая на крупнейших фестивалях, таких как Wacken Open Air, Download Festival и Ozzfest. Они сильно повлияли на развитие мелодичного дэт-метала и вдохновили сотни молодых групп по всему миру.
+
+В 2019 году группа официально прекратила существование. В 2020 году мир потерял Алексея Лайхо — человека, который стал настоящей иконой современного метала. Несмотря на это, наследие Children of Bodom продолжает жить в их музыке, в памяти фанатов и в бесчисленных музыкантах, вдохновлённых их творчеством.
+
+Children of Bodom — не просто группа. Это эпоха.</p>
+        </div>
+    </section>
+
+    <section id="members" class="content-section members">
+        <div class="container">
+            <h3>Лица Группы</h3>
+            <div class="member-grid">
+
+                <div class="member-card">
+                    <img src="alex2.png" alt="Фото Алекси Лайхо" class="member-photo"> 
+                    <div class="member-info">
+                        <h4>Алекси Лайхо</h4>
+                        <p>Вокал, Соло-Гитара (1993–2019)</p>
+                        <a href="alexi_details.html" class="btn btn-small" target="_blank">
+                            Подробнее о Алекси &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+    <img src="alek.png" alt="Фото Александра Куоппалы" class="member-photo">
+    <div class="member-info">
+        <h4>Александр Куоппала</h4>
+        <p>Ритм-Гитара (1995–2003)</p>
+        <a href="aleksan.html" class="btn btn-small">
+            Подробнее о Александре &rarr;
+        </a>
+    </div>
+</div>
+
+                <div class="member-card">
+    <img src="yann.png" alt="Фото Янне Вирмана" class="member-photo">
+    <div class="member-info">
+        <h4>Янне Вирман</h4>
+        <p>Клавишные (1997–2019)</p>
+        <a href="janne.html" class="btn btn-small">
+            Подробнее о Янне &rarr;
+        </a>
+    </div>
+</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="discography" class="content-section discography">
+        <div class="container">
+            <h3>Избранная Дискография</h3>
+            <div class="album-grid">
+                <div class="album-card">
+                    <h4>Something Wild (1997)</h4>
+                    <p>Дебютный альбом, задавший тон.</p>
+                </div>
+                <div class="album-card">
+                    <h4>Hatebreeder (1999)</h4>
+                    <p>Классика жанра, демонстрирующая виртуозность.</p>
+                </div>
+                <div class="album-card">
+                    <h4>Follow the Reaper (2000)</h4>
+                    <p>Прорывной альбом с мощными хитами.</p>
+                </div>
+            </div>
+            <p class="more-link">
+    <a href="https://music.youtube.com/playlist?list=PLvETwFzFiM9SZkqCaYxBdJVXZBH69UxzD" class="btn" target="_blank">
+        Посмотреть полную дискографию &rarr;
+    </a>
+</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Children of Bodom Tribute. Создано фанатами для фанатов.</p>
+        </div>
+<section id="media" class="content-section media">
+    <div class="container">
+        <h3>Видео и Клипы</h3>
+        
+        <p style="text-align: center; color: #a0a0a0; margin-bottom: 30px;">
+            Подборка официальных клипов и концертных выступлений, демонстрирующих мощь Children of Bodom.
+        </p>
+
+        <div class="video-grid" style="
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px;
+        ">
+            
+            <div class="video-item" style="
+                background-color: var(--color-medium); 
+                border-radius: 8px; 
+                overflow: hidden; 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            ">
+                <h4 style="padding: 15px; background-color: var(--color-medium); color: var(--color-accent); text-align: center; font-size: 1.2rem;">In Your Face</h4>
+                <div class="video-container" style="
+                    position: relative; 
+                    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                    height: 0; 
+                    overflow: hidden;
+                ">
+                    <iframe src="https://www.youtube.com/embed/5SgN5lvWZwQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="
+                        position: absolute; 
+                        top: 0; 
+                        left: 0; 
+                        width: 100%; 
+                        height: 100%;
+                    "></iframe>
+                </div>
+            </div>
+
+            <div class="video-item" style="
+                background-color: var(--color-medium); 
+                border-radius: 8px; 
+                overflow: hidden; 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            ">
+                <h4 style="padding: 15px; background-color: var(--color-medium); color: var(--color-accent); text-align: center; font-size: 1.2rem;">Are You Dead Yet? (Live)</h4>
+                <div class="video-container" style="
+                    position: relative; 
+                    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                    height: 0; 
+                    overflow: hidden;
+                ">
+                    <iframe src="https://www.youtube.com/embed/9Re4Ix4Ahzk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="
+                        position: absolute; 
+                        top: 0; 
+                        left: 0; 
+                        width: 100%; 
+                        height: 100%;
+                    "></iframe>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>    </footer>
+
+</body>
+</html>

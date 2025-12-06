@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александр Куоппала: Биография</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Общие Стилевые Настройки (Скопировано из чоб.html) --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-dark: #121212; --color-medium: #1C1C1C;
+            --color-light: #F0F0F0; --color-accent: #E30B5C;
+            --color-secondary: #00ADB5; --font-main: 'Montserrat', sans-serif;
+        }
+        body { font-family: var(--font-main); background-color: var(--color-dark); color: var(--color-light); line-height: 1.6; scroll-behavior: smooth; }
+        a { color: var(--color-accent); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--color-secondary); }
+        .container { width: 90%; max-width: 1000px; margin: 0 auto; }
+
+        /* --- Стили Детальной Страницы --- */
+        .header-detail { background-color: var(--color-medium); padding: 20px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+        .header-detail .container { display: flex; align-items: center; }
+        
+        /* Кнопка Назад */
+        .back-link { font-size: 1.1rem; color: var(--color-light); margin-right: 30px; display: flex; align-items: center; font-weight: 700; }
+        .back-link:hover { color: var(--color-accent); }
+        .back-link span { margin-right: 8px; }
+        
+        .bio-section { padding: 50px 0 80px 0; }
+        .bio-title { font-size: 3.5rem; color: var(--color-accent); margin-bottom: 5px; text-align: center; text-transform: uppercase; }
+        .bio-subtitle { font-size: 1.5rem; color: var(--color-secondary); margin-bottom: 40px; text-align: center; }
+        
+        /* Фотография */
+        .bio-photo { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 40px; border: 3px solid var(--color-accent); box-shadow: 0 0 20px rgba(227, 11, 92, 0.3); }
+        
+        .bio-text p { font-size: 1.15rem; color: #C0C0C0; margin-bottom: 25px; text-align: justify; }
+        
+        /* Блок Фактов */
+        .fact-box { background-color: var(--color-medium); padding: 20px; border-radius: 8px; border-left: 5px solid var(--color-secondary); margin-top: 30px; }
+        .fact-box ul { list-style: none; padding: 0; }
+        .fact-box li { margin-bottom: 10px; color: var(--color-light); }
+        .fact-box li strong { color: var(--color-accent); margin-right: 10px; }
+
+        /* Футер */
+        .footer { background-color: var(--color-medium); padding: 20px 0; text-align: center; border-top: 1px solid rgba(227, 11, 92, 0.3); margin-top: 40px; }
+        .footer p { font-size: 0.9rem; color: #888888; }
+        
+        @media (max-width: 600px) {
+            .bio-title { font-size: 2.5rem; }
+            .bio-subtitle { font-size: 1.2rem; }
+            .back-link { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-detail">
+        <div class="container">
+            <a href="чоб.html" class="back-link">
+                <span>&larr;</span> Вернуться к главной
+            </a>
+        </div>
+    </header>
+
+    <section class="bio-section">
+        <div class="container">
+            <h1 class="bio-title">АЛЕКСАНДР КУОППАЛА</h1>
+            <p class="bio-subtitle">Ритм-Гитара | 1995–2003</p>
+            
+            
+            <img src="alek.png" alt="Фотография Александра Куоппалы" class="bio-photo">
+            
+            <div class="bio-text">
+                <p><strong>Александр Куоппала</strong> был вторым гитаристом Children of Bodom и важной частью золотой эры группы, приняв участие в записи первых трех, самых влиятельных альбомов: Something Wild, Hatebreeder и Follow the Reaper.</p>
+                
+                <p>Его роль заключалась в создании мощного ритмического фундамента, который дополнял виртуозные соло Алекси Лайхо, придавая музыке COB её плотный и агрессивный звук. Он обеспечивал стабильность и мощь, необходимые для техничного мелодичного дэт-метала. Его вклад в студийную работу и живые выступления был огромен.</p>
+                
+                <p>В 2003 году, после почти десяти лет в группе, Александр принял решение покинуть Children of Bodom. Его уход ознаменовал конец классического состава группы. Несмотря на уход, его работа остается эталоном ритм-гитары в мелодичном дэт-метале.</p>
+            </div>
+            
+            <div class="fact-box">
+                <h4>Ключевые Факты:</h4>
+                <ul>
+                    <li><strong>Инструменты:</strong> Ритм-Гитара</li>
+                    <li><strong>Годы в COB:</strong> 1995–2003</li>
+                    <li><strong>Участие в альбомах:</strong> Something Wild, Hatebreeder, Follow the Reaper</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Children of Bodom Tribute. Биография Александра Куоппалы.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

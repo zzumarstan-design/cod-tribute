@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алекси Лайхо: Биография и Наследие</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Общие Стилевые Настройки (Те же, что и на главной) --- */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-dark: #121212;
+            --color-medium: #1C1C1C;
+            --color-light: #F0F0F0;
+            --color-accent: #E30B5C;
+            --color-secondary: #00ADB5;
+            --font-main: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* --- 2. Шапка и Кнопка Назад --- */
+
+        .header-detail {
+            background-color: var(--color-medium);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-detail .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .back-link {
+            font-size: 1.1rem;
+            color: var(--color-light);
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        
+        .back-link:hover {
+            color: var(--color-accent);
+        }
+        
+        .back-link span {
+            margin-right: 8px;
+        }
+
+        /* --- 3. Основной Контент (Биография) --- */
+
+        .bio-section {
+            padding: 50px 0 80px 0;
+        }
+
+        .bio-title {
+            font-size: 3.5rem;
+            color: var(--color-accent);
+            margin-bottom: 5px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .bio-subtitle {
+             font-size: 1.5rem;
+             color: var(--color-secondary);
+             margin-bottom: 40px;
+             text-align: center;
+        }
+
+        .bio-photo {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 3px solid var(--color-accent);
+            box-shadow: 0 0 20px rgba(227, 11, 92, 0.3);
+        }
+
+        .bio-text p {
+            font-size: 1.15rem;
+            color: #C0C0C0;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        /* --- 4. Характеристики (Факты) --- */
+        
+        .fact-box {
+            background-color: var(--color-medium);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--color-secondary);
+            margin-top: 30px;
+        }
+        
+        .fact-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .fact-box li {
+            margin-bottom: 10px;
+            color: var(--color-light);
+        }
+        
+        .fact-box li strong {
+            color: var(--color-accent);
+            margin-right: 10px;
+        }
+
+        /* --- 5. Футер --- */
+
+        .footer {
+            background-color: var(--color-medium);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(227, 11, 92, 0.3);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #888888;
+        }
+        
+        /* --- 6. Медиазапросы --- */
+        @media (max-width: 600px) {
+            .bio-title { font-size: 2.5rem; }
+            .bio-subtitle { font-size: 1.2rem; }
+            .back-link { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-detail">
+        <div class="container">
+            <a href="чоб.html" class="back-link">
+                <span>&larr;</span> Вернуться к главной
+            </a>
+        </div>
+    </header>
+
+    <section class="bio-section">
+        <div class="container">
+            <h1 class="bio-title">АЛЕКСИ ЛАЙХО</h1>
+            <p class="bio-subtitle">The Voice of Bodom | 1979–2020</p>
+            
+            <img src="alexs.png" alt="Фотография Алекси Лайхо" class="bio-photo">
+            
+            <div class="bio-text">
+                <p><strong>Алекси "Wildchild" Лайхо</strong> (настоящее имя — Маркку Уула Алекси Лайхо) был не просто лидером, вокалистом и соло-гитаристом Children of Bodom, он был одной из самых влиятельных фигур в современном мелодичном дэт-метале.</p>
+                
+                <p>Родился в Эспоо, Финляндия. Алекси начал заниматься музыкой с раннего возраста, осваивая скрипку, а затем переключился на гитару, вдохновленный такими виртуозами, как Стив Вай и Рэнди Роудс. Его стиль игры сочетал неоклассическую виртуозность с блэк-металлическим агрессивным тоном, что стало визитной карточкой COB.</p>
+                
+                <p>В 1993 году он основал группу, которая сначала называлась Inearthed, а позже стала Children of Bodom. Под его руководством группа выпустила десять студийных альбомов, получив золотые и платиновые статусы и мировое признание. Он был известен своим фирменным инструментом — гитарой **ESP Alexi Laiho Signature Series**.</p>
+                
+                <p>После распада Children of Bodom в 2019 году Алекси основал новую группу Bodom After Midnight. Его карьера трагически оборвалась в конце 2020 года. Наследие Алекси Лайхо как гитарного героя, композитора и уникального фронтмена остается неизмеримым.</p>
+            </div>
+            
+            <div class="fact-box">
+                <h4>Ключевые Факты:</h4>
+                <ul>
+                    <li><strong>Полное имя:</strong> Маркку Уула Алекси Лайхо</li>
+                    <li><strong>Инструменты:</strong> Вокал, Гитара, Клавишные</li>
+                    <li><strong>Другие проекты:</strong> Sinergy, Kylähullut, Bodom After Midnight</li>
+                    <li><strong>Фирменный стиль:</strong> Скриминговый вокал, неоклассические гитарные соло</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Children of Bodom Tribute. Биография Алекси Лайхо.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
